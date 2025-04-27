@@ -74,17 +74,30 @@
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
-    const category = document.querySelector(".mw-category.mw-category-columns");
+    /* const category = document.querySelector(".mw-category.mw-category-columns");
     const links = Array.from(category.querySelectorAll("a")); // convert nodelist to array using array.from
     //const links = [...category.querySelectorAll("a")]; or use this spreader to convert nodelist to array
-    const de = links.map(links => links.textContent).filter(streetName => streetName.includes("de"));
+    const de = links.map(links => links.textContent).filter(streetName => streetName.includes("de")); */
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+    const sortedPeople = people.sort();
+    console.log(sortedPeople);
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
-    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
+    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'aldin', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
+
+    const transpo = data.reduce(function (obj, item) {
+      if (!obj[item]) {
+        obj[item] = 0;
+      }
+      obj[item]++;
+      return obj;
+    }, {});
+
+    console.log("this is the last console log");
+    console.log(transpo);
 
   </script>
 </body>
